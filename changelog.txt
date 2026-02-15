@@ -1,0 +1,24 @@
+
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 15. 02. 2025
+	Info:
+		- Compatibilidad con la 2.0
+---------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 23. 12. 2023
+	Info:
+		- Se insetaron 3 nuevos niveles de cintas
+			- Cinta Avanzada
+			- Divisor Avanzado
+			- Cinta Subterranea Avanzada
+			- Cinta Superior
+			- Divisor Superior
+			- Cinta Subterranea Superior
+			- Cinta UltraSuperior
+			- Divisor UltraSuperior
+			- Cinta Subterranea UltraSuperior
+		- Se añadio compatibilidad con aii loaders
+---------------------------------------------------------------------------------------------------
