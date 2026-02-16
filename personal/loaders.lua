@@ -1,3 +1,25 @@
+local fluid_crafting_category =  mods["space-age"] and "crafting-with-fluid-or-metallurgy" or "crafting-with-fluid"
+
+if mods["space-age"] then
+  sciences = {
+    { "automation-science-pack", 1 },
+    { "logistic-science-pack", 1 },
+    { "chemical-science-pack", 1 },
+    { "production-science-pack", 1 },
+    { "utility-science-pack", 1 },
+    { "electromagnetic-science-pack", 1 }
+  }
+else
+  sciences = {
+    { "automation-science-pack", 1 },
+    { "logistic-science-pack", 1 },
+    { "chemical-science-pack", 1 },
+    { "production-science-pack", 1 },
+    { "utility-science-pack", 1 }
+  }
+end
+
+if not mods["space-age"] then
 AAILoaders.make_tier{ -- Advanced loader
   name = "advanced",
   transport_belt = "advanced-transport-belt",
@@ -6,9 +28,9 @@ AAILoaders.make_tier{ -- Advanced loader
   fluid_per_minute = "0.225",
   upgrade = "aai-superior-loader",
   technology = {
-    prerequisites = { "logistic-4", },
+    prerequisites = { "turbo-belts", },
     unit = {
-      count = 3500,
+      count = 1000,
       ingredients = {
         { "automation-science-pack", 1 },
         { "logistic-science-pack", 1 },
@@ -20,6 +42,7 @@ AAILoaders.make_tier{ -- Advanced loader
     }
   },
   recipe = {
+    crafting_category = fluid_crafting_category,
     ingredients = {
       {type = "item", name = "advanced-transport-belt", amount = 1},
       {type = "item", name = "advanced-circuit", amount = 10},
@@ -27,6 +50,7 @@ AAILoaders.make_tier{ -- Advanced loader
     energy_required = 2
   },
   unlubricated_recipe = {
+    crafting_category = fluid_crafting_category,
     ingredients = {
       {type = "item", name = "advanced-transport-belt", amount = 1},
       {type = "item", name = "advanced-circuit", amount = 10},
@@ -34,6 +58,7 @@ AAILoaders.make_tier{ -- Advanced loader
     energy_required = 10
   }
 }
+end
 
 AAILoaders.make_tier{ -- Superior loader
   name = "superior",
@@ -43,67 +68,62 @@ AAILoaders.make_tier{ -- Superior loader
   fluid_per_minute = "0.25",
   upgrade = "aai-ultrasuperior-loader",
   technology = {
-    prerequisites = { "logistic-5", },
+    prerequisites = { "superior-belts", },
     unit = {
-      count = 4500,
-      ingredients = {
-        { "automation-science-pack", 1 },
-        { "logistic-science-pack", 1 },
-        { "chemical-science-pack", 1 },
-        { "production-science-pack", 1 },
-        { "utility-science-pack", 1 },
-      },
+      count = 1500,
+      ingredients = sciences,
       time = 60
     }
   },
   recipe = {
+    crafting_category = fluid_crafting_category,
     ingredients = {
       {type = "item", name = "superior-transport-belt", amount = 1},
-      {type = "item", name = "advanced-circuit", amount = 15},
+      {type = "item", name = "processing-unit", amount = 8},
+      { type = "fluid", name = "lubricant", amount = 50}
     },
     energy_required = 2
   },
   unlubricated_recipe = {
+    crafting_category = fluid_crafting_category,
     ingredients = {
       {type = "item", name = "superior-transport-belt", amount = 1},
-      {type = "item", name = "advanced-circuit", amount = 15},
+      {type = "item", name = "processing-unit", amount = 8},
+      { type = "fluid", name = "lubricant", amount = 50}
     },
     energy_required = 10
   }
 }
 
-
-AAILoaders.make_tier{ -- Superior loader
+AAILoaders.make_tier{ -- UltraSuperior loader
   name = "ultrasuperior",
   transport_belt = "ultrasuperior-transport-belt",
   color = {255, 37, 148},
   fluid = "lubricant",
   fluid_per_minute = "0.25",
   technology = {
-    prerequisites = { "logistic-6", },
+    prerequisites = { "ultrasuperior-belts", },
     unit = {
-      count = 5000,
-      ingredients = {
-        { "automation-science-pack", 1 },
-        { "logistic-science-pack", 1 },
-        { "chemical-science-pack", 1 },
-        { "production-science-pack", 1 },
-        { "utility-science-pack", 1 },
-      },
+      count = 2500,
+      ingredients = sciences,
       time = 60
     }
   },
   recipe = {
+    crafting_category = fluid_crafting_category,
     ingredients = {
       {type = "item", name = "ultrasuperior-transport-belt", amount = 1},
-      {type = "item", name = "advanced-circuit", amount = 20},
+      {type = "item", name = "processing-unit", amount = 15},
+      { type = "fluid", name = "lubricant", amount = 50}
     },
     energy_required = 2
   },
   unlubricated_recipe = {
+    crafting_category = fluid_crafting_category,
     ingredients = {
       {type = "item", name = "ultrasuperior-transport-belt", amount = 1},
-      {type = "item", name = "advanced-circuit", amount = 20},
+      {type = "item", name = "processing-unit", amount = 15},
+      { type = "fluid", name = "lubricant", amount = 50}
     },
     energy_required = 10
   }
